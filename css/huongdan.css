@@ -1,0 +1,149 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    border: 0;
+    font-size: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #D9D9D9;
+}
+.header1{
+    display: flex;
+    margin: 5px;
+}
+.header1>h5{
+    margin: 10px;
+}
+.header1>a{
+    margin: 5px;
+}
+.a{
+    width: 25px;
+    background-color: #D9D9D9;
+}
+li>a:hover{
+    border-bottom: 1px solid black;
+}
+.header1>a:hover{
+    border-bottom: 1px solid black;
+}
+.b{
+    width: 90px;
+}
+.menu>ul>li>a>b{
+    font-size: 30px;
+}
+.header2{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(177, 177, 177);
+}
+ul{
+    display: flex;
+}
+li{
+    margin: 20px;
+    list-style: none;
+}
+a{
+    color: black;
+    text-decoration: none;
+     
+}
+.menu>ul>li>a0>b{
+    font-size: 30px; 
+}
+.timkiem{
+    width: 260px;
+    height: 30px;
+    margin-right: -50px;
+}
+.tim{
+    margin: 20px;
+    height: 30px;
+    display: flex;
+}
+.icontim{
+    margin-top: 5px;
+    width: 25px;
+    margin-right: 40px;
+}
+.nav{
+    display: flex;
+}
+h1{
+    margin-top: 30px;
+    margin-left: 70px;
+    font-size: 30px;
+    color: #ff0000;
+}
+h2{
+    font-size: 40px;
+    margin-top: 25px;
+    margin-left: 400px;
+}
+.ke{
+    margin-top: 40px;
+    width: 1600px;
+    border: 1px solid rgb(114, 97, 97);
+}
+.conten{
+    margin: 40px;
+}
+p{
+    width: 1000px;
+    margin-top: 30px;
+}
+.footer{
+    display: flex;
+    justify-content: space-between;
+    background-color: #c2abab;
+    align-items: center;
+    border: 1px solid rgb(179, 172, 172);
+    height: 100px;
+    border: 1px solid rgb(173, 163, 163);
+    margin-top: 50px;
+}
+.input-register {
+    width: 278px;
+    height: 50px;
+    border: 2px solid #ffa800;
+    background: transparent;
+    color: #fff;
+  }
+  
+  .regiter {
+      display: flex;
+      align-items: center;
+  }
+  .input-register::placeholder {
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: "Montserrat";
+    padding-left: 25px;
+  }
+  
+  .btn-register-footer {
+    font-size: 16px;
+    width: 120px;
+    height: 52px;
+    background: #ffa800;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 17px;
+  }
+.f{
+    width: 300px;
+    font-size: 16px;
+    color: #ff0000;
+    font-weight: 400; 
+    margin-left: 30px;
+    font-size: 20px;
+}  
+.conten>b{
+    font-size: 20px;
+}

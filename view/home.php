@@ -25,7 +25,7 @@
                     }else{
                         $mr="mr";
                     }
-                    $linksp="index.php?act=sanphamct&idsp=".$id;
+                    $linksp="trangchu.php?act=sanphamct&idsp=".$id;
                     
                     echo '<div class="box_items '.$mr.'">
                     <div class="box_items_img">

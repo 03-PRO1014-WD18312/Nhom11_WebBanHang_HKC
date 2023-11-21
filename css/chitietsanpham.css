@@ -1,4 +1,4 @@
-html{
+/* html{
     font-size: 62.5%;
 }
 *{
@@ -60,7 +60,7 @@ html{
 }
 .soluong>.input-mid{
     width: 4em;
-    height: 36px;
+    height: 100px;
 }
 .box-right>.boxmua{
     display: inline-block;
@@ -88,4 +88,4 @@ html{
     text-align: justify;
     padding: 2em 7em;
     font-size: 2em;
-}
+} */

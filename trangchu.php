@@ -30,17 +30,17 @@
                 include "view/sanpham.php";
                 break;
             case "sanphamct":
-                if(isset($_POST['guibinhluan'])){
-                    insert_binhluan($_POST['idpro'], $_POST['noidung']);
-                }
-                if(isset($_GET['idsp']) && $_GET['idsp'] > 0){
-                    $sanpham = loadone_sanpham($_GET['idsp']);
-                    $sanphamcl = load_sanpham_cungloai($_GET['idsp'], $sanpham['iddm']);
-                    $binhluan = loadall_binhluan($_GET['idsp']);
-                    include "view/chitietsanpham.php";
-                }else{
-                    include "view/home.php";            
-                }
+                // if(isset($_POST['guibinhluan'])){
+                //     insert_binhluan($_POST['idpro'], $_POST['noidung']);
+                // }
+                // if(isset($_GET['idsp']) && $_GET['idsp'] > 0){
+                //     $sanpham = loadone_sanpham($_GET['idsp']);
+                //     $sanphamcl = load_sanpham_cungloai($_GET['idsp'], $sanpham['iddm']);
+                //     $binhluan = loadall_binhluan($_GET['idsp']);
+                    include "chitietnguoidung.php";     
+                // }else{
+                //     include "view/home.php";            
+                // }
                 break;
             case "dangky":
                 if(isset($_POST['dangky'])){

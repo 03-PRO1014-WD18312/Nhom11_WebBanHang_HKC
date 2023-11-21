@@ -36,6 +36,7 @@ li>a:hover{
     width: 90px;
 }
 .header2{
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
 }

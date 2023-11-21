@@ -1,7 +1,7 @@
 *{
     margin: 0%;
     padding: 0%;
-    max-width: 1440px;
+    max-width: 100%;
     border: 0;
     font-size: 100%;
     font-family: Arial, Helvetica, sans-serif;
@@ -36,6 +36,7 @@ li>a:hover{
     width: 90px;
 }
 .header2{
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
 }

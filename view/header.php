@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/trangchu.css">
-
+    <link rel="stylesheet" href="css/chitietsanpham.css">
     <title>dự án 1</title>
 </head>
 <body>
@@ -31,11 +31,11 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="trangchu.php"><b> Trang chủ</b></a></li>
+                    <li><a href="index.php?act=resethome"><b> Trang chủ</b></a></li>
                     <li><a href="#"><b>Áo xuân hè</b> </a></li>
                     <li><a href="#"><b>Quần</b> </a></li>
                     <li><a href="#"><b>Áo Jean</b></a></li>
-                    <li><a href="trangchu.php?act=thongtin.php"><b> Tin tức</b></a></li>
+                    <li><a href="index.php?act=thongtin.php"><b> Tin tức</b></a></li>
                 </ul>
             </div>
             <div class="tim">

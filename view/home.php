@@ -25,7 +25,7 @@
                     }else{
                         $mr="mr";
                     }
-                    $linksp="trangchu.php?act=sanphamct&idsp=".$id;
+                    $linksp="index.php?act=sanphamct&idsp=".$id;
                     
                     echo '<div class="box_items '.$mr.'">
                     <div class="box_items_img">
@@ -33,7 +33,7 @@
                 
              </div>
               <a class="item_name" href="'. $linksp .'">'.$name.'</a>
-              <p class="price">$'.$price.'</p>
+              <p class="price">$'.$price.'.000₫</p>
               
            </div>';
                     $i+=1;

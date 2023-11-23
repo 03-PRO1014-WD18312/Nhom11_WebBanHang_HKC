@@ -33,7 +33,7 @@
                 
              </div>
               <a class="item_name" href="'. $linksp .'">'.$name.'</a>
-              <p class="price">$'.$price.'</p>
+              <p class="price">$'.$price.'.000₫</p>
               
            </div>';
                     $i+=1;

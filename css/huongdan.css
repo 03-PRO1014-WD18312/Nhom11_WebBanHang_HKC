@@ -1,10 +1,12 @@
 *{
     margin: 0%;
     padding: 0%;
+    max-width: 100%;
     border: 0;
     font-size: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -14,7 +16,7 @@
     display: flex;
     margin: 5px;
 }
-.header1>h5{
+.header1>p{
     margin: 10px;
 }
 .header1>a{
@@ -33,14 +35,12 @@ li>a:hover{
 .b{
     width: 90px;
 }
-.menu>ul>li>a>b{
-    font-size: 30px;
-}
 .header2{
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid rgb(177, 177, 177);
 }
+
 ul{
     display: flex;
 }
@@ -53,7 +53,7 @@ a{
     text-decoration: none;
      
 }
-.menu>ul>li>a0>b{
+b{
     font-size: 30px; 
 }
 .timkiem{
@@ -70,6 +70,7 @@ a{
     margin-top: 5px;
     width: 25px;
     margin-right: 40px;
+    
 }
 .nav{
     display: flex;
@@ -87,15 +88,14 @@ h2{
 }
 .ke{
     margin-top: 40px;
-    width: 1600px;
+    width: 100%;
     border: 1px solid rgb(114, 97, 97);
 }
 .conten{
     margin: 40px;
 }
-p{
-    width: 1000px;
-    margin-top: 30px;
+h3{
+    padding-top: 20px;
 }
 .footer{
     display: flex;

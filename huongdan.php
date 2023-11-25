@@ -17,11 +17,11 @@
             <div class="header1">
                 <div class="header1">
                     <img class="a" src="upload/tải xuống.png" alt="">
-                    <a href="login.html">Tài khoản</a>
+                    <a href="tkmk.php">Tài khoản</a>
                 </div>
                 <div class="header1">
                     <img class="a" src="upload/tải xuống (1).png" alt="">
-                    <a href="giohang.html">Giỏ hàng</a>
+                    <a href="view/giohang.php">Giỏ hàng</a>
                 </div>
             </div>
         </div>

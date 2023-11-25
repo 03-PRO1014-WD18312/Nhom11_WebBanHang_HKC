@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/trangchu.css">
     <link rel="stylesheet" href="css/chitietsanpham.css">
+    
     <title>dự án 1</title>
 </head>
 <body>
@@ -17,11 +18,11 @@
             <div class="header1">
                 <div class="header1">
                     <img class="a" src="upload/tải xuống.png" alt="">
-                    <a href="login.html">Tài khoản</a>
+                    <a href="tkmk.php">Tài khoản</a>
                 </div>
                 <div class="header1">
                     <img class="a" src="upload/tải xuống (1).png" alt="">
-                    <a href="giohang.html">Giỏ hàng</a>
+                    <a href="index.php?act=giohang">Giỏ hàng</a>
                 </div>
             </div>
         </div>
@@ -35,7 +36,7 @@
                     <li><a href="#"><b>Áo xuân hè</b> </a></li>
                     <li><a href="#"><b>Quần</b> </a></li>
                     <li><a href="#"><b>Áo Jean</b></a></li>
-                    <li><a href="index.php?act=thongtin.php"><b> Tin tức</b></a></li>
+                    <li><a href="thongtin.php"><b> Tin tức</b></a></li>
                 </ul>
             </div>
             <div class="tim">

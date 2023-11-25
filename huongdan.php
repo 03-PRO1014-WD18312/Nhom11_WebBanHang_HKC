@@ -4,45 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/huongdan.css">
-    <title>Document</title>
+    
+    <title>dự án 1</title>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <div class="header1">
-                <img class="a" src="images/istockphoto-1264235523-612x612.jpg" alt="">
-                <h5>0926524733</h5>
+                <img class="a" src="upload/istockphoto-1264235523-612x612.jpg" alt="">
+                <h3>0926524733</h3>
             </div>
             <div class="header1">
                 <div class="header1">
-                    <img class="a" src="images/tải xuống.png" alt="">
+                    <img class="a" src="upload/tải xuống.png" alt="">
                     <a href="login.html">Tài khoản</a>
                 </div>
                 <div class="header1">
-                    <img class="a" src="images/tải xuống (1).png" alt="">
+                    <img class="a" src="upload/tải xuống (1).png" alt="">
                     <a href="giohang.html">Giỏ hàng</a>
                 </div>
             </div>
         </div>
         <div class="header2">
             <div class="logo">
-                <img class="b" src="images/logo.jpg" alt="">
+                <img class="b" src="upload/logo.jpg" alt="">
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="trangchu.html"><b> Trang chủ</b></a></li>
-                    <li><a href="aoxuanhe.html"><b>Áo xuân hè</b> </a></li>
-                    <li><a href="quan.html"><b>Quần</b> </a></li>
-                    <li><a href="thongtin.html"><b> Tin tức</b></a></li>
+                    <li><a href="index.php?act=resethome"><b> Trang chủ</b></a></li>
+                    <li><a href="#"><b>Áo xuân hè</b> </a></li>
+                    <li><a href="#"><b>Quần</b> </a></li>
+                    <li><a href="#"><b>Áo Jean</b></a></li>
+                    <li><a href="thongtin.php"><b> Tin tức</b></a></li>
                 </ul>
             </div>
             <div class="tim">
                 <input class="timkiem" type="text" placeholder="Tìm kiếm" style="border: 1px solid black; border-radius: 10px;">
-            <a href="#"><img class="icontim" src="images/images.png" alt=""></a>
+               <a href="#"><img class="icontim" src="upload/images.png" alt=""></a>
             </div>
         </div>
+        
         <div class="nav">
-            <a href="thongtin.html"><h1> < back </h1></a>
+            <a href="thongtin.php"><h1> < back </h1></a>
             <h2>Hướng Dẫn Mua Hàng</h2>
         </div>
         <center><div class="ke" ></div></center>
@@ -73,7 +76,7 @@
             <b>==> Sau khi chuyển khoản các bạn có thể chụp lại ảnh hoá đơn rồi gửi inbox cho Shop để Shop chuyển hàng sớm cho bạn .</b><br><br>
             <b>Khoảng 3-5 ngày là hàng đến nơi (Nếu các bạn ở TP- còn ở Huyện sẽ chậm hơn 1-2ngày )! <br>  (trừ T7 - Chủ Nhật bên vận chuyển nghỉ)</b>
         </div>
-        <div class="footer">
+        <!-- <div class="footer">
             <span class="f">Đăng ký ngay để đc nhận thông báo khi có sản phẩm mới</span>
             <form class="regiter">
                 <input style="border: 1px solid black;"
@@ -89,7 +92,7 @@
                   class="btn-register-footer"
                 />
               </form>
-        </div>
+        </div> -->
     </div>
 </body>
 </html>

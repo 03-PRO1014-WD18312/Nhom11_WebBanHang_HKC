@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/trangchu.css">
     <link rel="stylesheet" href="css/chitietsanpham.css">
+    
     <title>dự án 1</title>
 </head>
 <body>
@@ -35,7 +36,7 @@
                     <li><a href="#"><b>Áo xuân hè</b> </a></li>
                     <li><a href="#"><b>Quần</b> </a></li>
                     <li><a href="#"><b>Áo Jean</b></a></li>
-                    <li><a href="index.php?act=thongtin.php"><b> Tin tức</b></a></li>
+                    <li><a href="thongtin.php"><b> Tin tức</b></a></li>
                 </ul>
             </div>
             <div class="tim">

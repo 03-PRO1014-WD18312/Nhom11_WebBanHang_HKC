@@ -35,7 +35,7 @@
                     <li><a href="#"><b>Áo xuân hè</b> </a></li>
                     <li><a href="#"><b>Quần</b> </a></li>
                     <li><a href="#"><b>Áo Jean</b></a></li>
-                    <li><a href="index.php?act=thongtin.php"><b> Tin tức</b></a></li>
+                    <li><a href="thongtin.php"><b> Tin tức</b></a></li>
                 </ul>
             </div>
             <div class="tim">

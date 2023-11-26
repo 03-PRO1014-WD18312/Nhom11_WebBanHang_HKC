@@ -128,17 +128,14 @@ if (isset($_GET['act'])) {
             $listbinhluan = loadall_binhluan(0);
             include "binhluan/list.php";
             break;
-        case 'thongke':
-            $listthongke = loadall_thongke();
+        case "thongke" :
+            $listthongke=loadall_thongke();
             include "thongke/list.php";
             break;
-        case 'bieudo':
+        case "bieudo":
+            $listthongke=loadall_thongke();
             include "thongke/bieudo.php";
-            break;
-        default:
-            include "home1.php";
-            break;
-
+            break; 
     }
 } else {
     include "home1.php";

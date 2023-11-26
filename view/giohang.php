@@ -1,9 +1,7 @@
 <?php
-  
     $html_cart='';
     $i=1;
     foreach ($_SESSION['giohangcuatoi'] as $spadd) {
-        
         $ttien=$spadd[3]*$spadd[4];
         $html_cart.='
         <tr>
@@ -13,7 +11,7 @@
         <td>'.$spadd[3].'.000đ</td>
         <td>'.$spadd[4].'</td>
         <td>'.$ttien.'.000đ</td>
-        <td>xóa</td>
+        <td><a href="#"><input type="button" value="Xóa"></td></a></td>
     </tr>
     
         ';
@@ -22,12 +20,12 @@
 ?>
 
 <div class="containerfull">
-    <div class="giohang">Giỏ hàng</div>
-</div>
-    <section class="container">
+    <div class="container0">
+    <div class="giohang">Giỏ hàng của bạn</div>
+    
+    <section class="container1">
         <div class="container2">
             <div class="cart">
-                <h2>ĐƠN HÀNG</h2>
                 <table>
                     <tr>
                         <th>STT</th>
@@ -45,9 +43,62 @@
             </div>
             
         </div>
-        <div class="clxt"><a class="xt" href="#">Thanh toán</a>  <a class="xt" href="index.php?act=deletegh">xóa</a></div>
+        <div class="clxt"><a class="xt" href="#">Thanh toán</a>  <a class="xt" href="index.php?act=deletegh">xóa tất cả</a></div>
     </section>
+    </div>
+    <div class="container3">
+        <h3>TÓM TẮT ĐƠN HÀNG</h3>
+        <h3>
+            <p>Tổng tiền:</p>
+            <p><?=$ttien?>.000đ</p>
+        </h3>
+        <center class="ke"><h4></h4></center>
+        <center class="btn">
+            <button class= "mua"><p>Tiến hành đặt hàng</p></button>
+            <button class= "mua"><p><a href="index.php?act=resethome">Mua thêm sản phẩm</a></p></button>
+        </center>
+    </div>
+</div>
 <style>
+    .containerfull{
+        display: flex;
+    }
+    .container3{
+        margin-left: 300px;
+        margin-top: 60px;
+        width: 400px;
+        height: 300px;
+        background-color: #ccc;
+    }
+    h3{
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        margin: 15px;
+    }
+    h4{
+        width: 350px;
+        border: 1px solid black;
+    }
+    .mua>p{
+        width: 250px;
+        height: 35px;
+        font-size: 20px;
+        text-align: center;
+        line-height: 35px;
+        border: 1px solid black;
+    }
+    .btn{
+        margin-top: 30px;
+    }
+    .mua>p:hover{
+        background-color: black;
+        color: #fff;
+    }
+    .mua>p>a:hover{
+        background-color: black;
+        color: #fff;
+    }
     .giohang{
         font-size: 30px;
         margin: 10px;
@@ -55,9 +106,6 @@
     }
     .cart{
         margin-left: 20px; 
-    }
-    h2{
-        font-size: 20px; 
     }
     table{
         border:1px solid #000;

@@ -20,7 +20,18 @@ $dstop10 = loadall_sanpham_top10();
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-
+        case 'timkiem':
+            if (isset($_POST['tim']) && ($_POST['tim'])) {
+                $kyw = $_POST['kyw'];
+                $iddm = $_POST['iddm'];
+            } else {
+                $kyw = '';
+                $iddm = 0;
+            }
+            $listdanhmuc = loadall_danhmuc();
+            $listsanpham = loadall_sanpham($kyw, $iddm);
+            include "view/timkiemsp.php";
+            break;
         case "sanpham":
             if (isset($_POST['keyword']) && $_POST['keyword'] != 0) {
                 $kyw = $_POST['keyword'];
@@ -103,12 +114,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $id = $_POST['id'];
                 $name = $_POST['name'];
                 $img = $_POST['img'];
-                $price = $_POST['id'];
+                $price = $_POST['price'];
                 $soluong = 1;
                 $ttien = $soluong * $price;
                 $spadd = array($id, $name, $img, $price, $soluong,);
                 $_SESSION['giohangcuatoi'][]=$spadd;
-                
+
             }
             include "view/giohang.php";
             break;
@@ -119,6 +130,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if (isset($_SESSION['giohangcuatoi'])) unset($_SESSION['giohangcuatoi']);
             header('location: index.php');
             break;
+
         case "muangay":
             if (isset($_POST['muangay']) && ($_POST['muangay'])) {
                 $id = $_POST['id'];

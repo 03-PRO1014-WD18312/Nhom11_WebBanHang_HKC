@@ -2,19 +2,20 @@
     <div class="row2 font_title mb">
         <h1>DANH SÁCH LOẠI HÀNG HÓA</h1>
     </div>
-    <form action="index.php?listsp" class="mb" method="post">
-        <input type="text" name="kyw">
-        <select name="iddm" id="">
-            <option value="0" selected>Tất cả</option>
-            <?php
-            foreach ($listdanhmuc as $danhmuc) {
-                extract($danhmuc);
-                echo '<option value="' . $id . '">' . $name . '</option>';
-            }
-            ?>
-        </select>
-        <input type="submit" name="listok" value="GO">
-    </form>
+    <form action="index.php?act=listsp" method="post">
+            <input type="text" name="kyw" id="" style="margin: 10px">
+         <select name="iddm" id="">
+            <option value="0" selected>Tất Cả</option>
+              <?php
+                foreach($listdanhmuc as $danhmuc){
+                  extract($danhmuc);
+                  echo '<option value="'.$id.'">'.$name.'</option>';
+                };
+              ?>
+                
+            </select>
+            <input type="submit" value="Tìm Kiếm" name="listok">
+            </form>
     <div class="row2 form_content ">
         <form action="#" method="POST">
             <div class="row2 mb10 formds_loai">

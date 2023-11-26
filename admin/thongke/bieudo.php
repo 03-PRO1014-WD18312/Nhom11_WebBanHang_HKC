@@ -1,88 +1,42 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dự án mẫu</title>
-  <link rel="stylesheet" href="./css/css.css">
- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dự án mẫu</title>
-  <link rel="stylesheet" href="./css/css.css">
-  <script src="https://www.gstatic.com/charts/loader.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <style>
-
-  </style>
-</head>
-<body>
-<div class="boxcenter">
-  <!-- BIGIN HEADER -->
-  <div class="row2">
+<div class="row2">
     <div class="row2 font_title">
       <h1>Biểu đồ</h1>
     </div>
     <div class="row2 form_content ">
-      <div
-              id="myChart" style="width:100%; width:800px; height:500px; align-items: center">
-      </div>
+    <div id="piechart"></div>
 
-      <script>
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart);
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-        function drawChart() {
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
 
-// Set Data
-          const data = google.visualization.arrayToDataTable([
-            
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Danh mục','Số lượng sản phẩm'],
+  <?php
+    $tongdm=count($listthongke);
+    $i=1;
+    foreach($listthongke as $thongke){
+      extract($thongke);
+      if($i==$tongdm) $dauphay=""; else $dauphay="";
+      echo"['".$thongke['tendm']."',".$thongke['countsp']."],";
+      $i+=1;
+    }
+  ?>
+]);
 
-            ['Contry', 'Mhl'],
-            ['hieudeptraivcl',45.6],
-            ['Italy',54.8],
-            ['France',48.6],
-            ['Spain',44.4],
-            ['USA',23.9],
-            ['Argentina',14.5],
-            <?php 
-            $tongdm=count($listthongke);
-            $i=1;
-                foreach($listthongke as $thongke){
-                    extract($thongke);
-                    if($i==$tongdm) $dauphay=""; else $dauphay= ",";
-                    echo "['".$thongke['tendm']."', ".$thongke['countsp']."]".$dauphay;
-                    $i++;
-                    
-                }
-            ?>
-          ]);
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'Thống kê sản phẩm theo danh mục', 'width':1100, 'height':800};
 
-// Set Options
-          const options = {
-            title:'World Wide Wine Production',
-            is3D:true
-          };
-
-// Draw
-          const chart = new google.visualization.PieChart(document.getElementById('myChart'));
-          chart.draw(data, options);
-
-        }
-      </script>
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
 
     </div>
   </div>
-
-  <!-- END HEADER -->
-
-
-</div>
-
-</body>
-</html>

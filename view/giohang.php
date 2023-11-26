@@ -10,9 +10,9 @@
         <td>'.$i.'</td>
         <td><img src="' . $spadd[2] . '" alt="" style="width: 50px;"></td>
         <td>'.$spadd[1].'</td>
-        <td>'.$spadd[3].'</td>
+        <td>'.$spadd[3].'.000đ</td>
         <td>'.$spadd[4].'</td>
-        <td>'.$ttien.'</td>
+        <td>'.$ttien.'.000đ</td>
         <td>xóa</td>
     </tr>
     

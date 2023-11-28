@@ -21,24 +21,24 @@
             <button>M</button>
         </div>
         <?php
-        $soluong = isset($_POST['item']) ? $_POST['item'] : 1;
-        if ($soluong <= 1) {
-            $soluong = 1;
+        $valuesoluong = isset($_POST['item']) ? $_POST['item'] : 1;
+        if ($valuesoluong <= 1) {
+            $valuesoluong = 1;
         }
 
         if (isset($_POST['incqty'])) {
-            $soluong = $soluong + 1;
+            $valuesoluong = $valuesoluong + 1;
         }
 
         if (isset($_POST['decqty'])) {
-            $soluong = $soluong - 1;
+            $valuesoluong = $valuesoluong - 1;
         }
         ?>
         <form method='post'>
         <div class="soluong">
                 <input type='hidden' name='item' />
                 <button name='decqty'>-</button><input type='text' size='1' name='item'
-                    value="<?php echo $soluong ?>" /><button name='incqty'>+</button>
+                    value="<?php echo $valuesoluong ?>" /><button name='incqty'>+</button>
         </div>
         </form>
         <div class="boxmua">

@@ -109,7 +109,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $price = $_POST['id'];
                 $soluong = 1;
                 $ttien = $soluong * $price;
-                $spadd = array($id, $name, $img, $price, $soluong,);
+                $spadd = array($id, $name, $img, $price, $soluong, );
                 $_SESSION['giohangcuatoi'][] = $spadd;
 
             }

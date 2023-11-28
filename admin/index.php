@@ -58,6 +58,7 @@ if (isset($_GET['act'])) {
                 $tensp = $_POST['tensp'];
                 $giasp = $_POST['giasp'];
                 $mota = $_POST['mota'];
+                $soluong=$_POST['soluong'];
                 $hinh = $_FILES['hinh']['name'];
                 $target_dir = "../upload/";
                 $target_file = $target_dir . basename($_FILES["hinh"]["name"]);

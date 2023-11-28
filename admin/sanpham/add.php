@@ -21,7 +21,11 @@
       </div>
       <div class="row2 mb10">
         <label>Giá sản phẩm </label> <br>
-        <input type="text" name="giasp" placeholder="nhập vào tên">
+        <input type="text" name="giasp" placeholder="nhập vào gia">
+      </div>
+      <div class="row2 mb10">
+        <label>Số lượng sản phẩm </label> <br>
+        <input type="text" name="soluong" placeholder="nhập vào so luong">
       </div>
       <div class="row2 mb10">
         <label>Ảnh sản phẩm </label> <br>

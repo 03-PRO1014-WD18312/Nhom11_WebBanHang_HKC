@@ -1,7 +1,7 @@
 <?php
-function insert_sanpham($tensp, $giasp, $hinh, $mota, $iddm)
+function insert_sanpham($tensp, $giasp, $hinh, $mota, $iddm,$soluong)
 {
-    $sql = "insert into sanpham(name,price,img,mota,iddm) values('$tensp','$giasp','$hinh','$mota','$iddm')";
+    $sql = "insert into sanpham(name,price,img,mota,iddm,size,soluong) values('$tensp','$giasp','$hinh','$mota','$iddm','$soluong')";
     pdo_execute($sql);
 }
 function loadall_sanpham_home()

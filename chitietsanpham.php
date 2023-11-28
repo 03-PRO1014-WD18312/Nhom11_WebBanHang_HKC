@@ -13,19 +13,34 @@
         <p>
             <?= $price ?>.000₫
         </p>
-        <!-- <div class="size">
-                <p>KÍCH THƯỚC</p>
-                <button>2XL</button>
-                <button>XL</button>
-                <button>L</button>
-                <button>M</button>
-            </div>
-            <div class="soluong">
-                <input type="button" value="-">
-                <input type="text" name="" id="" value="1" class="input-mid">
-                <input type="button" value="+">
-                
-            </div> -->
+        <div class="size">
+            <p>KÍCH THƯỚC</p>
+            <button>2XL</button>
+            <button>XL</button>
+            <button>L</button>
+            <button>M</button>
+        </div>
+        <?php
+        $value = isset($_POST['item']) ? $_POST['item'] : 1;
+        if ($value <= 1) {
+            $value = 1;
+        }
+
+        if (isset($_POST['incqty'])) {
+            $value = $value + 1;
+        }
+
+        if (isset($_POST['decqty'])) {
+            $value = $value - 1;
+        }
+        ?>
+        <form method='post'>
+        <div class="soluong">
+                <input type='hidden' name='item' />
+                <button name='decqty'>-</button><input type='text' size='1' name='item'
+                    value="<?php echo $value ?>" /><button name='incqty'>+</button>
+        </div>
+        </form>
         <div class="boxmua">
             <?php echo '<form action="index.php?act=themvaogiohang" method="POST">
                 <input type="hidden" name="id" value="' . $id . '">
@@ -63,8 +78,12 @@
         font-size: 62.5%;
     }
 
-    *{
+    * {
         font-family: sans-serif;
+    }
+
+    #binhluan {
+        margin-left: 140px;
     }
 
     .container-chitietsanpham {
@@ -93,7 +112,6 @@
 
     .box-right>p {
         font-size: 1.4em;
-        margin: 10px 0;
         font-weight: bold;
     }
 
@@ -109,10 +127,10 @@
 
     .box-right>.size>p {
         font-size: 1.3em;
-        margin: 10px 0;
     }
 
     .soluong input,
+    .soluong button,
     .box-right>.size button {
         float: left;
         outline: none;
@@ -137,11 +155,11 @@
 
     .soluong>.input-mid {
         width: 4em;
-        height: 38.5px;
+        height: 38px;
     }
 
     .box-right>.boxmua {
-        display: flex;
+        display: inline-block;
     }
 
     .boxmua input {
@@ -150,9 +168,10 @@
         color: white;
         background-color: black;
         padding: 15px;
-        margin: 10px 5px;
+        margin: 10px 0;
         position: relative;
         top: 80px;
+        right: 200px;
     }
 
     .box-right .soluong {

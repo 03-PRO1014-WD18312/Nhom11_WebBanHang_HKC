@@ -10,8 +10,10 @@ include "model/taikhoan.php";
 include "view/header.php";
 include "global.php";
 
-if(!isset($_SESSION['giohangcuatoi'])) $_SESSION['giohangcuatoi']=[]; 
-if(!isset($_SESSION['donhangcuatoi'])) $_SESSION['donhangcuatoi']=[];
+if (!isset($_SESSION['giohangcuatoi']))
+    $_SESSION['giohangcuatoi'] = [];
+if (!isset($_SESSION['donhangcuatoi']))
+    $_SESSION['donhangcuatoi'] = [];
 
 
 $spnew = loadall_sanpham_home();
@@ -46,6 +48,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 include "view/home.php";
             }
             break;
+        
         case "dangky":
             if (isset($_POST['dangky'])) {
                 $email = $_POST['email'];
@@ -106,17 +109,18 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $price = $_POST['id'];
                 $soluong = 1;
                 $ttien = $soluong * $price;
-                $spadd = array($id, $name, $img, $price, $soluong,);
-                $_SESSION['giohangcuatoi'][]=$spadd;
-                
+                $spadd = array($id, $name, $img, $price, $soluong, );
+                $_SESSION['giohangcuatoi'][] = $spadd;
+
             }
             include "view/giohang.php";
             break;
-            case 'giohang':
-                include "view/giohang.php";
-                break;
+        case 'giohang':
+            include "view/giohang.php";
+            break;
         case 'deletegh':
-            if (isset($_SESSION['giohangcuatoi'])) unset($_SESSION['giohangcuatoi']);
+            if (isset($_SESSION['giohangcuatoi']))
+                unset($_SESSION['giohangcuatoi']);
             header('location: index.php');
             break;
         case "muangay":
@@ -128,11 +132,12 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $soluong = 1;
                 $ttien = $soluong * $price;
                 $spadd = [$id, $name, $img, $price, $soluong, $ttien];
-                array_push($_SESSION['donhangcuatoi'],$spadd);
+                array_push($_SESSION['donhangcuatoi'], $spadd);
             }
             include "muangay.php";
             break;
-     default: include "view/home.php";       
+        default:
+            include "view/home.php";
     }
 } else {
     include "view/home.php";

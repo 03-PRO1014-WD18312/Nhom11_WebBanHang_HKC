@@ -110,7 +110,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $soluong = 1;
                 $ttien = $soluong * $price;
                 $spadd = array($id, $name, $img, $price, $soluong, );
-                $_SESSION['giohangcuatoi'][] = $spadd;
+                $_SESSION['giohangcuatoi'][]=$spadd;
 
             }
             include "view/giohang.php";

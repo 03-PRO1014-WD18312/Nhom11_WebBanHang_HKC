@@ -32,6 +32,8 @@
                 <input type="hidden" name="name" value="' . $name . '">
                 <input type="hidden" name="img" value="' . $img . '">
                 <input type="hidden" name="price" value="' . $price . '">
+                <input type="number" name="soluong" min="1" value="1" max="10"
+                 style="background: #aaa; color: #000; width: 50px; border: 0.5px solid black;border-radius: 3px;">
                 <input type="submit" name="themvaogiohang" value="Thêm vào giỏ hàng">
             </form>'; ?>
 

@@ -1,22 +1,5 @@
 <?php
-    $html_cart='';
-    $i=1;
-    foreach ($_SESSION['giohangcuatoi'] as $spadd) {
-        $ttien=$spadd[3]*$spadd[4];
-        $html_cart.='
-        <tr>
-        <td>'.$i.'</td>
-        <td><img src="' . $spadd[2] . '" alt="" style="width: 50px;"></td>
-        <td>'.$spadd[1].'</td>
-        <td>'.$spadd[3].'.000đ</td>
-        <td>'.$spadd[4].'</td>
-        <td>'.$ttien.'.000đ</td>
-        <td><a href="#"><input type="button" value="Xóa"></td></a></td>
-    </tr>
-    
-        ';
-    $i++;
-    }
+    $html_cart=giohang();
 ?>
 
 <div class="containerfull">
@@ -43,14 +26,14 @@
             </div>
             
         </div>
-        <div class="clxt"><a class="xt" href="#">Thanh toán</a>  <a class="xt" href="index.php?act=deletegh">xóa tất cả</a></div>
+        <div class="clxt"><a class="xt" href="#">Thanh toán</a>  <a class="xt" href="index.php?act=giohang&del=1">xóa tất cả</a></div>
     </section>
     </div>
     <div class="container3">
         <h3>TÓM TẮT ĐƠN HÀNG</h3>
         <h3>
             <p>Tổng tiền:</p>
-            <p><?=$ttien?>.000đ</p>
+            <p><?=$tongdh?>.000đ</p>
         </h3>
         <center class="ke"><h4></h4></center>
         <center class="btn">

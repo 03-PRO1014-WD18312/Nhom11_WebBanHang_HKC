@@ -8,6 +8,7 @@ include "model/danhmuc.php";
 include "model/binhluan.php";
 include "model/taikhoan.php";
 include "view/header.php";
+include "view/ghcart.php";
 include "global.php";
 
 if(!isset($_SESSION['giohangcuatoi'])) $_SESSION['giohangcuatoi']=[]; 
@@ -115,20 +116,42 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $name = $_POST['name'];
                 $img = $_POST['img'];
                 $price = $_POST['price'];
-                $soluong = 1;
-                $ttien = $soluong * $price;
+                $soluong = $_POST['soluong'];
+                $fg = 0;
+
+                $i=0;
+                foreach($_SESSION['giohangcuatoi'] as $spadd){
+                    if($spadd[1]==$spadd){
+                        $soluongnew=$soluong+$spadd[4];
+                        $_SESSION['giohangcuatoi'][$i][4]+=$soluongnew;
+                        $fg=1;
+                        break;
+                    }
+                    $i++;
+                }
+
+                if($fg==0){
                 $spadd = array($id, $name, $img, $price, $soluong,);
                 $_SESSION['giohangcuatoi'][]=$spadd;
-
+                header('location: index.php?act=giohang');
+                }
             }
-            include "view/giohang.php";
+            // include "view/giohang.php";
             break;
-            case 'giohang':
+            case 'giohang1':
                 include "view/giohang.php";
                 break;
-        case 'deletegh':
-            if (isset($_SESSION['giohangcuatoi'])) unset($_SESSION['giohangcuatoi']);
-            header('location: index.php');
+        case 'giohang':
+            if (isset($_GET['del']) && ($_GET['del']==1)){
+                unset($_SESSION["giohangcuatoi"]);
+                // $_SESSION['giohangcuatoi']=[];
+                header('location: index.php');
+            }else {
+                if (isset($_SESSION['giohangcuatoi'])) {
+                    $tongdh=get_tongdh();
+                }
+                include "view/giohang.php";
+            }
             break;
 
         case "muangay":

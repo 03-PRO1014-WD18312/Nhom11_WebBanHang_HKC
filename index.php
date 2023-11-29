@@ -117,24 +117,10 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $img = $_POST['img'];
                 $price = $_POST['price'];
                 $soluong = $_POST['soluong'];
-                $fg = 0;
-
-                $i=0;
-                foreach($_SESSION['giohangcuatoi'] as $spadd){
-                    if($spadd[1]==$spadd){
-                        $soluongnew=$soluong+$spadd[4];
-                        $_SESSION['giohangcuatoi'][$i][4]+=$soluongnew;
-                        $fg=1;
-                        break;
-                    }
-                    $i++;
-                }
-
-                if($fg==0){
-                $spadd = array($id, $name, $img, $price, $soluong,);
+                $spadd = array($id, $name, $img, $price, $soluong);
                 $_SESSION['giohangcuatoi'][]=$spadd;
                 header('location: index.php?act=giohang');
-                }
+                
             }
             // include "view/giohang.php";
             break;

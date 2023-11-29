@@ -8,6 +8,7 @@ include "model/danhmuc.php";
 include "model/binhluan.php";
 include "model/taikhoan.php";
 include "view/header.php";
+include "view/ghcart.php";
 include "global.php";
 
 if(!isset($_SESSION['giohangcuatoi'])) $_SESSION['giohangcuatoi']=[]; 
@@ -20,7 +21,18 @@ $dstop10 = loadall_sanpham_top10();
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-
+        case 'timkiem':
+            if (isset($_POST['tim']) && ($_POST['tim'])) {
+                $kyw = $_POST['kyw'];
+                $iddm = $_POST['iddm'];
+            } else {
+                $kyw = '';
+                $iddm = 0;
+            }
+            $listdanhmuc = loadall_danhmuc();
+            $listsanpham = loadall_sanpham($kyw, $iddm);
+            include "view/timkiemsp.php";
+            break;
         case "sanpham":
             if (isset($_POST['keyword']) && $_POST['keyword'] != 0) {
                 $kyw = $_POST['keyword'];
@@ -103,22 +115,45 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $id = $_POST['id'];
                 $name = $_POST['name'];
                 $img = $_POST['img'];
-                $price = $_POST['id'];
-                $soluong = 1;
-                $ttien = $soluong * $price;
+                $price = $_POST['price'];
+                $soluong = $_POST['soluong'];
+                $fg = 0;
+
+                $i=0;
+                foreach($_SESSION['giohangcuatoi'] as $spadd){
+                    if($spadd[1]==$spadd){
+                        $soluongnew=$soluong+$spadd[4];
+                        $_SESSION['giohangcuatoi'][$i][4]+=$soluongnew;
+                        $fg=1;
+                        break;
+                    }
+                    $i++;
+                }
+
+                if($fg==0){
                 $spadd = array($id, $name, $img, $price, $soluong,);
                 $_SESSION['giohangcuatoi'][]=$spadd;
-                
+                header('location: index.php?act=giohang');
+                }
             }
-            include "view/giohang.php";
+            // include "view/giohang.php";
             break;
-            case 'giohang':
+            case 'giohang1':
                 include "view/giohang.php";
                 break;
-        case 'deletegh':
-            if (isset($_SESSION['giohangcuatoi'])) unset($_SESSION['giohangcuatoi']);
-            header('location: index.php');
+        case 'giohang':
+            if (isset($_GET['del']) && ($_GET['del']==1)){
+                unset($_SESSION["giohangcuatoi"]);
+                // $_SESSION['giohangcuatoi']=[];
+                header('location: index.php');
+            }else {
+                if (isset($_SESSION['giohangcuatoi'])) {
+                    $tongdh=get_tongdh();
+                }
+                include "view/giohang.php";
+            }
             break;
+
         case "muangay":
             if (isset($_POST['muangay']) && ($_POST['muangay'])) {
                 $id = $_POST['id'];

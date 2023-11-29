@@ -22,7 +22,7 @@
                 </div>
                 <div class="header1">
                     <img class="a" src="upload/tải xuống (1).png" alt="">
-                    <a href="index.php?act=giohang">Giỏ hàng</a>
+                    <a href="index.php?act=giohang1">Giỏ hàng</a>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
             </div>
             <div class="tim">
                 <input class="timkiem" type="text" placeholder="Tìm kiếm" style="border: 1px solid black; border-radius: 10px;">
-               <a href="#"><img class="icontim" src="upload/images.png" alt=""></a>
+               <a href="index.php?act=timkiem&tim="><img class="icontim" src="upload/images.png" alt=""></a>
             </div>
         </div>
         <div class="ke"></div>

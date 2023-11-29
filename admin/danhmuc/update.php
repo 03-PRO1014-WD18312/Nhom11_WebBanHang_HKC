@@ -9,10 +9,11 @@
          </div>
          <div class="row2 form_content ">
           <form action="index.php?act=updatedm" method="POST">
+          <input type="hidden" name="id" value="<?php if(isset($id)&&($id>0)) echo $id;?>">
            <div class="row2 mb10 form_content_container">
-           <label> Mã loại </label> <br>
+           <!-- <label> Mã loại </label> <br>
             <input type="text" name="maloai" placeholder="nhập vào mã loại">
-           </div>
+           </div> -->
            <div class="row2 mb10">
             <label>Tên loại </label> <br>
             <input type="text" name="tenloai" value="<?php if(isset($name)&&($name!="")){echo $name;}?>">
@@ -22,7 +23,7 @@
            <input class="mr20" type="submit" name="capnhat" value="CẬP NHẬT">
          <input  class="mr20" type="reset" value="NHẬP LẠI">
 
-         <a href="index.php?act=lisdm"><input  class="mr20" type="button" value="DANH SÁCH"></a>
+         <a href="index.php?act=listdm"><input  class="mr20" type="button" value="DANH SÁCH"></a>
            </div>
            <?php 
                 if(isset($thongbao)&&$thongbao!=""){

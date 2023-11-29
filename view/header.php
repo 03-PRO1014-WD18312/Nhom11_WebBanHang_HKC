@@ -22,7 +22,7 @@
                 </div>
                 <div class="header1">
                     <img class="a" src="upload/tải xuống (1).png" alt="">
-                    <a href="index.php?act=giohang">Giỏ hàng</a>
+                    <a href="index.php?act=giohang1">Giỏ hàng</a>
                 </div>
             </div>
         </div>

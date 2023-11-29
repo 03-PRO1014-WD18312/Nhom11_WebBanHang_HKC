@@ -1,5 +1,5 @@
 <div class="row2">
-  <div class="row2 font_title">
+  
     <h1>THÊM MỚI SẢN PHẨM</h1>
   </div>
   <div class="row2 form_content ">

@@ -106,23 +106,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $id = $_POST['id'];
                 $name = $_POST['name'];
                 $img = $_POST['img'];
-                $price = $_POST['id'];
-                $soluong = 1;
-                $ttien = $soluong * $price;
-                $spadd = array($id, $name, $img, $price, $soluong, );
-                $_SESSION['giohangcuatoi'][]=$spadd;
-
+                
             }
             include "view/giohang.php";
             break;
-        case 'giohang':
-            include "view/giohang.php";
-            break;
-        case 'deletegh':
-            if (isset($_SESSION['giohangcuatoi']))
-                unset($_SESSION['giohangcuatoi']);
-            header('location: index.php');
-            break;
+        
         case "muangay":
             if (isset($_POST['muangay']) && ($_POST['muangay'])) {
                 $id = $_POST['id'];

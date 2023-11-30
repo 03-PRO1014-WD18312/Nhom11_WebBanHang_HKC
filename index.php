@@ -24,9 +24,11 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             if (isset($_POST['tim']) && ($_POST['tim'])) {
                 $kyw = $_POST['kyw'];
                 $iddm = $_POST['iddm'];
+                $kqtimkiem="kết quả tìm kiếm với từ khóa: ".$kyw;
             } else {
                 $kyw = '';
                 $iddm = 0;
+                $kqtimkiem="";
             }
             $listdanhmuc = loadall_danhmuc();
             $listsanpham = loadall_sanpham($kyw, $iddm);
@@ -44,7 +46,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $iddm = 0;
             }
             $dssp = loadall_sanpham($kyw, $iddm);
-            $tendm = load_ten_dm($iddm);
+            // $tendm = load_ten_dm($iddm);
             include "view/sanpham.php";
             break;
         case "sanphamct":

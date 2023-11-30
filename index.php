@@ -11,9 +11,8 @@ include "view/header.php";
 include "view/ghcart.php";
 include "global.php";
 
-if(!isset($_SESSION['giohangcuatoi'])) $_SESSION['giohangcuatoi']=[]; 
-if(!isset($_SESSION['donhangcuatoi'])) $_SESSION['donhangcuatoi']=[];
-
+if (!isset($_SESSION['giohangcuatoi'])) $_SESSION['giohangcuatoi'] = [];
+if (!isset($_SESSION['donhangcuatoi'])) $_SESSION['donhangcuatoi'] = [];
 
 $spnew = loadall_sanpham_home();
 $dsdm = loadall_danhmuc();
@@ -60,30 +59,85 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
         case "dangky":
             if (isset($_POST['dangky'])) {
-                $email = $_POST['email'];
-                $user = $_POST['user'];
-                $pass = $_POST['pass'];
-                insert_taikhoan($email, $user, $pass);
-                $thongbao = "đăng kí thành công";
+                if (!empty($_POST['username'])) {
+                    $user = $_POST['username'];
+                } else {
+                    return;
+                }
+                if (!empty($_POST['email'])) {
+                    $email = $_POST['email'];
+                } else {
+                    return;
+                }
+                if (!empty($_POST['address'])) {
+                    $address = $_POST['address'];
+                } else {
+                    return;
+                }
+                if (!empty($_POST['tel'])) {
+                    $tel = $_POST['tel'];
+                } else {
+                    return;
+                }
+                if (!empty($_POST['password'])) {
+                    $pass = $_POST['password'];
+                } else {
+                    return;
+                }
+                $role = 0;
+                insert_taikhoan($email, $user, $pass, $tel, $address, $role);
+                echo "<script>";
+                echo "alert('Đăng kí thành công')";
+                echo "</script>";
             }
-            include "view/login/dangky.php";
+            include "view/reg.php";
             break;
         case "dangnhap":
-            if (isset($_POST['dangnhap']) && ($_POST['dangnhap'] != "")) {
-                $user = $_POST['user'];
-                $pass = $_POST['pass'];
-                $checkuser = checkuser($user, $pass);
-                if (is_array($checkuser)) {
-                    $_SESSION['user'] = $checkuser;
-                    header('location:index.php');
+            if (isset($_POST['dangnhap'])) {
+                if (!empty($_POST['username'])) {
+                    $user = $_POST['username'];
                 } else {
-                    $thongbao1 = "tài khoản không tồn tại vui lòng kiểm tra hoặc đăng ký!";
+                    return;
+                }
+                if (!empty($_POST['password'])) {
+                    $pass = $_POST['password'];
+                } else {
+                    return;
+                }
+                if (checkuser($user, $pass)) {
+                    $_SESSION['is_login'] = true;
+                    $_SESSION['username'] = $user;
+                    header('location:index.php');
+                } elseif (checkadmin($user, $pass)) {
+                    $_SESSION['is_login'] = true;
+                    $_SESSION['admin'] = $user;
+                    header('location:admin/index.php');
+                } else {
+                    echo "<script>";
+                    echo "alert('Tài khoản không tồn tại vui lòng kiểm tra hoặc đăng ký!')";
+                    echo "</script>";
                 }
             }
-            include "view/home.php";
+            include "view/login.php";
+            break;
+        case "tkmk":
+            if (!empty($_SESSION['username'])) {
+                include "tkmk.php";
+            } else {
+                header("Location: ?act=dangnhap");
+            }
+            break;
+        case "thoat":
+            unset($_SESSION['username']);
+            unset($_SESSION['is_login']);
+            header("location: ?act=dangnhap");
             break;
         case "edit_taikhoan":
-            if (isset($_POST['capnhat']) && ($_POST['capnhat'] != "")) {
+            if (isset($_SESSION['username'])) {
+                $username = $_SESSION['username'];
+                $info = getuser($username);
+            }
+            if (isset($_POST['capnhat'])) {
                 $user = $_POST['user'];
                 $pass = $_POST['pass'];
                 $email = $_POST['email'];
@@ -91,21 +145,31 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $tel = $_POST['tel'];
                 $id = $_POST['id'];
                 update_taikhoan($id, $user, $pass, $email, $address, $tel);
-                $_SESSION['user'] = checkuser($user, $pass);
+                echo "<script>";
+                echo "alert('Cập nhật thành công')";
+                echo "</script>";
                 header('location:index.php?act=edit_taikhoan');
             }
-            include "view/login/edit_taikhoan.php";
-            break;
-        case "dangxuat":
-            dangxuat();
-            include "view/home.php";
+            include "view/taikhoan/edit_taikhoan.php";
             break;
         case "quenmk":
             if (isset($_POST['guiemail'])) {
-                $email = $_POST['email'];
-                $sendMailMess = sendMail($email);
+                if (!empty($_POST['email'])) {
+                    $email = $_POST['email'];
+                    if (sendMail($email)) {
+                        echo "<script>";
+                        echo "alert('Gửi mai thành công')";
+                        echo "</script>";
+                    } else {
+                        echo "<script>";
+                        echo "alert('Gửi mai thất bại')";
+                        echo "</script>";
+                    }
+                } else {
+                    return;
+                }
             }
-            include "view/login/quenmk.php";
+            include "view/quenmk.php";
             break;
         case "resethome":
             include "view/home.php";
@@ -118,23 +182,22 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $price = $_POST['price'];
                 $soluong = $_POST['soluong'];
                 $spadd = array($id, $name, $img, $price, $soluong);
-                $_SESSION['giohangcuatoi'][]=$spadd;
+                $_SESSION['giohangcuatoi'][] = $spadd;
                 header('location: index.php?act=giohang');
-                
             }
             // include "view/giohang.php";
             break;
-            case 'giohang1':
-                include "view/giohang.php";
-                break;
+        case 'giohang1':
+            include "view/giohang.php";
+            break;
         case 'giohang':
-            if (isset($_GET['del']) && ($_GET['del']==1)){
+            if (isset($_GET['del']) && ($_GET['del'] == 1)) {
                 unset($_SESSION["giohangcuatoi"]);
                 // $_SESSION['giohangcuatoi']=[];
                 header('location: index.php');
-            }else {
+            } else {
                 if (isset($_SESSION['giohangcuatoi'])) {
-                    $tongdh=get_tongdh();
+                    $tongdh = get_tongdh();
                 }
                 include "view/giohang.php";
             }
@@ -149,15 +212,15 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $soluong = 1;
                 $ttien = $soluong * $price;
                 $spadd = [$id, $name, $img, $price, $soluong, $ttien];
-                array_push($_SESSION['donhangcuatoi'],$spadd);
+                array_push($_SESSION['donhangcuatoi'], $spadd);
             }
             include "muangay.php";
             break;
-     default: include "view/home.php";       
+        default:
+            include "view/home.php";
     }
 } else {
     include "view/home.php";
 }
 
 include "view/footer.php";
-?>

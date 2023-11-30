@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/trangchu.css">
     <link rel="stylesheet" href="css/chitietsanpham.css">
-    
+
     <title>dự án 1</title>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -18,7 +20,7 @@
             <div class="header1">
                 <div class="header1">
                     <img class="a" src="upload/tải xuống.png" alt="">
-                    <a href="tkmk.php">Tài khoản</a>
+                    <a href="?act=tkmk">Tài khoản</a>
                 </div>
                 <div class="header1">
                     <img class="a" src="upload/tải xuống (1).png" alt="">
@@ -41,8 +43,7 @@
             </div>
             <div class="tim">
                 <input class="timkiem" type="text" placeholder="Tìm kiếm" style="border: 1px solid black; border-radius: 10px;">
-               <a href="index.php?act=timkiem&tim="><img class="icontim" src="upload/images.png" alt=""></a>
+                <a href="index.php?act=timkiem&tim="><img class="icontim" src="upload/images.png" alt=""></a>
             </div>
         </div>
         <div class="ke"></div>
-        

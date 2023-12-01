@@ -32,14 +32,12 @@
             <div class="menu">
                 <ul>
                     <li><a href="index.php?act=resethome"><b> Trang chủ</b></a></li>
-                    <li><a href="#"><b>Áo xuân hè</b> </a></li>
-                    <li><a href="#"><b>Quần</b> </a></li>
-                    <li><a href="#"><b>Áo Jean</b></a></li>
+                    <li><a href="index.php?act=sanpham"><b>Sản phẩm</b> </a></li>
                     <li><a href="thongtin.php"><b> Tin tức</b></a></li>
                 </ul>
             </div>
             <div class="tim">
-                <input class="timkiem" type="text" placeholder="Tìm kiếm" style="border: 1px solid black; border-radius: 10px;">
+                <!-- <input class="timkiem" type="text" placeholder="Tìm kiếm" style="border: 1px solid black; border-radius: 10px;"> -->
                <a href="index.php?act=timkiem&tim="><img class="icontim" src="upload/images.png" alt=""></a>
             </div>
         </div>

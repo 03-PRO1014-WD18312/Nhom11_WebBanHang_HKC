@@ -1,0 +1,73 @@
+.container{
+    margin: 0 15%;
+
+}
+.container>p{
+    font-size: 20px;
+}
+.container .box-right input ,.container .box-left input ,.container .box-left .last{
+    width: 500px;
+    display: block;
+    padding: 0.94em 2.8em 0.94em 0.8em;
+    border-radius: 5px;
+    margin: 10px 0;
+    box-shadow: 0 0 0 1px #d9d9d9;
+    background-color: white;
+    border: none;
+    transition: all 0.2s ease-out;
+}
+.container .box-right,.container .box-left{
+    display: inline;
+}
+.box-left .email-sdt {
+    display: flex;
+}
+.email-sdt input:first-child{
+    width: 300px;
+}
+.email-sdt input:last-child{
+    width: 140px;
+    margin-left: 10px;
+}
+.container .content{
+    display: flex;
+}
+.content>.box-left .last{
+    margin-top: 25px;
+    height: 200px;
+}
+.content .box-right .box-one{
+    display: flex;
+}
+.box-right .box-one img{
+    width: 30%;
+}
+.content .box-right {
+    margin: 30px;
+    padding-left: 30px;
+    background-color: #fbfbfb;
+}
+.box-one .xoa{
+    position: relative;
+    top: 80px;
+    left: 20px;
+}
+.div-two{
+    font-size: 25px;
+}
+.content .box-right>input{
+    width: 50%;
+    padding: 20px;
+    font-size: 20px;
+    color:white;
+    background-color: #338dbc;
+    cursor: pointer;
+}
+.backgiohang{
+    text-decoration: none;    
+    font-size: 20px;
+    color: #338dbc;
+}
+form .box-right{
+    display: flex;
+}

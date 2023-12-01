@@ -22,6 +22,36 @@
         }
         return $html_cart;
     }
+    function donhang(){
+        $html_cart='';
+        $i=1;
+        $tongtiendh=0;
+        foreach ($_SESSION['giohangcuatoi'] as $spadd) {
+            extract($spadd);
+            $ttien=$spadd[3]*$spadd[4];
+            $tongtiendh=$tongtiendh+$ttien;
+            $html_cart.='
+            <div class="box-right">
+                <div class="box-one">
+                    <img src="'.$spadd[2].'"
+                        alt="" name="anh">
+                    <p name="tensp">'.$spadd[1].'</p>
+                    <a href="" class="xoa">xoa</a>
+                    
+                </div>
+                <p name="soluong">Số Lượng: '.$spadd[4].'</p>
+                    <p name="giatien">Giá Tiền: '.$ttien.'.000đ</p>
+                    
+            ';
+            
+        $i++;
+        }
+        $html_cart.='<div class="div-two">
+                    <p name="tongtien">Tổng tiền: '.$tongtiendh.'.000đ</p>
+                </div>';
+        return $html_cart;
+    }
+
 
     function get_tongdh(){
         

@@ -32,9 +32,7 @@
             <div class="menu">
                 <ul>
                     <li><a href="index.php?act=resethome"><b> Trang chủ</b></a></li>
-                    <li><a href="#"><b>Áo xuân hè</b> </a></li>
-                    <li><a href="#"><b>Quần</b> </a></li>
-                    <li><a href="#"><b>Áo Jean</b></a></li>
+                    <li><a href="index.php?act=sanpham"><b>Sản phẩm</b> </a></li>
                     <li><a href="thongtin.php"><b> Tin tức</b></a></li>
                 </ul>
             </div>
@@ -48,7 +46,7 @@
             <a href="thongtin.php"><h1> < back </h1></a>
             <h2>Hướng Dẫn Mua Hàng</h2>
         </div>
-        <center><div class="ke" ></div></center>
+        <center><div class="ke" style="width: 1000px;"></div></center>
         <div class="conten">
             <b style="margin: 20px;">( Nhận ship với đơn >150K, Freeship với đơn hàng >400K )</b><br><br>
             <b style="margin: 20px;">1. Khu vực Hà Nội:</b><br><br> 

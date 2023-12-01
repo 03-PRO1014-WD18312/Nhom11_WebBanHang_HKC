@@ -33,9 +33,7 @@
             <div class="menu">
                 <ul>
                     <li><a href="index.php?act=resethome"><b> Trang chủ</b></a></li>
-                    <li><a href="#"><b>Áo xuân hè</b> </a></li>
-                    <li><a href="#"><b>Quần</b> </a></li>
-                    <li><a href="#"><b>Áo Jean</b></a></li>
+                    <li><a href="index.php?act=sanpham"><b>Sản phẩm</b> </a></li>
                     <li><a href="thongtin.php"><b> Tin tức</b></a></li>
                 </ul>
             </div>

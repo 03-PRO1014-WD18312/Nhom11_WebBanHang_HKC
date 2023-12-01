@@ -37,7 +37,7 @@
         </h3>
         <center class="ke"><h4></h4></center>
         <center class="btn">
-            <button class= "mua"><p>Tiến hành đặt hàng</p></button>
+            <button class= "mua"><p><a href="index.php?act=donhang">Tiến hành đặt hàng</a></p></button>
             <button class= "mua"><p><a href="index.php?act=resethome">Mua thêm sản phẩm</a></p></button>
         </center>
     </div>

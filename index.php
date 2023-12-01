@@ -119,17 +119,17 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $img = $_POST['img'];
                 $price = $_POST['price'];
                 $soluong = $_POST['soluong'];
-                $spadd = array($id, $name, $img, $price, $soluong,);
+                $spadd = array($id, $name, $img, $price, $soluong);
                 $_SESSION['giohangcuatoi'][] = $spadd;
                 header('location: index.php?act=giohang');
             }
             // include "view/giohang.php";
-            break;
+                break;
             case 'giohang1':
                 include "view/giohang.php";
                 break;
         case 'giohang':
-            if (isset($_GET['del']) && ($_GET['del']==1)){
+            if (isset($_GET['del']) && ($_GET['del']==1)) {
                 unset($_SESSION["giohangcuatoi"]);
                 // $_SESSION['giohangcuatoi']=[];
                 header('location: index.php');

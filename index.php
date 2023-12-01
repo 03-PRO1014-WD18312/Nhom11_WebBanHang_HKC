@@ -7,16 +7,23 @@ include "model/sanpham.php";
 include "model/danhmuc.php";
 include "model/binhluan.php";
 include "model/taikhoan.php";
-include "view/header.php";
+include "model/donhang.php";
 include "view/ghcart.php";
 include "global.php";
 
 if (!isset($_SESSION['giohangcuatoi'])) $_SESSION['giohangcuatoi'] = [];
 if (!isset($_SESSION['donhangcuatoi'])) $_SESSION['donhangcuatoi'] = [];
 
+
 $spnew = loadall_sanpham_home();
 $dsdm = loadall_danhmuc();
 $dstop10 = loadall_sanpham_top10();
+$kiemtra=0;
+if($_GET['act']=='donhang'){
+    $kiemtra=1;
+}
+if($kiemtra==0){
+    include 'view/header.php';
 if (isset($_GET['act']) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
@@ -223,6 +230,35 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
     }
 } else {
     include "view/home.php";
+}}else{
+    $act = $_GET['act'];
+        switch ($act) {
+    case 'donhang':
+        // exit(include 'view/header.php');
+        if(isset($_POST['thanhtoandh'])&&($_POST['thanhtoandh'])){ 
+            $tongtiendh=0;
+        foreach ($_SESSION['giohangcuatoi'] as $spadd) {
+            extract($spadd);
+            $ttien=$spadd[3]*$spadd[4];
+            $tongtiendh=$tongtiendh+$ttien;
+        }
+            $tongtiendh1=$tongtiendh;
+            $hoten = $_POST['hoten'];
+            $email = $_POST['email'];
+            $phone = $_POST['phone'];
+            $diachi = $_POST['diachi'];
+            $ghichu = $_POST['ghichu'];
+            $ngay_dat_hang = date('h:i:sa d/m/Y');
+            insert_donhang($tongtiendh1,$hoten, $email, $phone, $diachi,$ghichu, $ngay_dat_hang);
+        }
+    
+        include "donhang.php";
+
+
+
+        break;
+    }
 }
+
 
 include "view/footer.php";

@@ -120,7 +120,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 $price = $_POST['price'];
                 $soluong = $_POST['soluong'];
                 $spadd = array($id, $name, $img, $price, $soluong,);
-                $_SESSION['giohangcuatoi'][]=$spadd;
+                $_SESSION['giohangcuatoi'][] = $spadd;
                 header('location: index.php?act=giohang');
             }
             // include "view/giohang.php";

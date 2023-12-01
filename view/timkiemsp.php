@@ -16,7 +16,7 @@
                 else $kq="sản phẩm";
             ?>
             </form>
-
+                    <div class="ketqua"><?=$kq?></div>
                     <div class="items">
                     <?php
                         $i=0;
@@ -44,6 +44,11 @@
                         ?>
                         </div>
 <style>
+.ketqua{
+    margin: 30px;
+    text-align: center;
+    font-size:20px;
+}
 h5{
     font-size: 30px;
     margin: 30px;
@@ -129,5 +134,4 @@ margin-top:20px;
 
 }
 </style>
-                </table>
 

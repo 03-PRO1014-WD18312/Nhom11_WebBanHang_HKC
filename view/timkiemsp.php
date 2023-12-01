@@ -11,6 +11,10 @@
               ?>
             </select>
             <input id="kiem" type="submit" value="Tìm Kiếm" name="tim">
+            <?php
+                if ($kqtimkiem!="") $kq=$kqtimkiem;
+                else $kq="sản phẩm";
+            ?>
             </form>
 
                     <div class="items">

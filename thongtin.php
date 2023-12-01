@@ -40,7 +40,7 @@
                 </ul>
             </div>
             <div class="tim">
-                <input class="timkiem" type="text" placeholder="Tìm kiếm" style="border: 1px solid black; border-radius: 10px;">
+                <!-- <input class="timkiem" type="text" placeholder="Tìm kiếm" style="border: 1px solid black; border-radius: 10px;"> -->
                <a href="index.php?act=timkiem&tim="><img class="icontim" src="upload/images.png" alt=""></a>
             </div>
         </div>

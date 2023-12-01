@@ -124,20 +124,20 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 header('location: index.php?act=giohang');
             }
             // include "view/giohang.php";
-                break;
-            case 'giohang1':
+            break;
+        case 'giohang1':
+            include "view/giohang.php";
+            break;
+        case 'giohang':
+            if (isset($_GET['del']) && ($_GET['del'] == 1)) {
+                unset($_SESSION["giohangcuatoi"]);
+                // $_SESSION['giohangcuatoi']=[];
+                header('location: index.php');
+            } else {
+                if (isset($_SESSION['giohangcuatoi'])) {
+                    $tongdh = get_tongdh();
+                }
                 include "view/giohang.php";
-                break;
-            case 'giohang':
-                if (isset($_GET['del']) && ($_GET['del'] == 1)) {
-                    unset($_SESSION["giohangcuatoi"]);
-                    // $_SESSION['giohangcuatoi']=[];
-                    header('location: index.php');
-                } else {
-                    if (isset($_SESSION['giohangcuatoi'])) {
-                        $tongdh = get_tongdh();
-                    }
-                    include "view/giohang.php";
             }
             break;
 

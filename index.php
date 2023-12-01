@@ -129,7 +129,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
                 include "view/giohang.php";
                 break;
         case 'giohang':
-            if (isset($_GET['del']) && ($_GET['del']==1)) {
+            if (isset($_GET['del']) && ($_GET['del'] == 1)) {
                 unset($_SESSION["giohangcuatoi"]);
                 // $_SESSION['giohangcuatoi']=[];
                 header('location: index.php');

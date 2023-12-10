@@ -31,7 +31,7 @@
                 <td>'.$address.'</td>
                 <td>'.$tel.'</td>
                 <td>'.$role.'</td>
-                <td><a href="'.$suatk.'"><input type="button" value="Sửa"></a>
+                <td><a href="'.$suatk.'"><input type="hidden" value="Sửa"></a>
                 <a href="'.$xoatk.'"><input type="button" value="Xóa"></td></a>
             </tr>';
                     }
@@ -40,9 +40,7 @@
                 </table>
             </div>
             <div class="row mb10 ">
-                <input class="mr20" type="button" value="CHỌN TẤT CẢ">
-                <input class="mr20" type="button" value="BỎ CHỌN TẤT CẢ">
-                <a href="index.php?act=addtk"> <input class="mr20" type="button" value="NHẬP THÊM"></a>
+
             </div>
         </form>
     </div>

@@ -40,7 +40,10 @@ function update_taikhoan($id, $user, $pass, $email, $address, $tel)
     $sql = "update taikhoan set user='" . $user . "',email='" . $email . "',address='" . $address . "',tel='" . $tel . "' where id=" . $id;
     return pdo_execute($sql);
 }
-
+function delete_taikhoan($id){
+    $sql= "delete from taikhoan where id=".$id;
+    pdo_execute($sql);
+}
 
 function sendMail($email)
 {

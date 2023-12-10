@@ -55,7 +55,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             $listdanhmuc = loadall_danhmuc();
             include "danhmuc/list.php";
             break;
-            /*Product*/
+        /*Product*/
         case "listsp":
             if (isset($_POST['listok']) && ($_POST['listok'])) {
                 $kyw = $_POST['kyw'];
@@ -126,6 +126,13 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
             break;
         case "dskh":
             $listtaikhoan = loadall_taikhoan();
+            include "taikhoan/list.php";
+            break;
+        case "xoatk":
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                delete_taikhoan($_GET['id']);
+            }
+            $listtaikhoan=loadall_taikhoan();
             include "taikhoan/list.php";
             break;
         case "dsbl":

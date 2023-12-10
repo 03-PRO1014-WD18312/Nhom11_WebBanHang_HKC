@@ -18,7 +18,7 @@ if (!isset($_SESSION['donhangcuatoi'])) $_SESSION['donhangcuatoi'] = [];
 $spnew = loadall_sanpham_home();
 $dsdm = loadall_danhmuc();
 $dstop10 = loadall_sanpham_top10();
-$kiemtra=0;
+$kiemtra = 0;
 if (isset($_GET['act'])&&$_GET['act'] == 'donhang'||$_GET['act'] == 'bill'){
     $kiemtra = 1;
 }

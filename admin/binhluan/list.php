@@ -27,7 +27,7 @@
                 <td>'.$iduser.'</td>
                 <td>'.$idpro.'</td>
                 <td>'.$ngaybinhluan.'</td>
-                <td><a href="'.$suabl.'"><input type="button" value="Sửa"></a>
+                <td><a href="'.$suabl.'"><input type="hidden" value="Sửa"></a>
                 <a href="'.$xoabl.'"><input type="button" value="Xóa"></td></a>
             </tr>';
                     }

@@ -3,9 +3,6 @@
   <div class="boxcontent formtaikhoan">
     <div class="row mb10">
       <li>
-        <a href="index.php?act=quenmk">Quên mật khẩu</a>
-      </li>
-      <li>
         <a href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
       </li>
       <li>

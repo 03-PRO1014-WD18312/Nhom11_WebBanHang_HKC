@@ -11,8 +11,10 @@ include "model/donhang.php";
 include "view/ghcart.php";
 include "global.php";
 
-if (!isset($_SESSION['giohangcuatoi'])) $_SESSION['giohangcuatoi'] = [];
-if (!isset($_SESSION['donhangcuatoi'])) $_SESSION['donhangcuatoi'] = [];
+if (!isset($_SESSION['giohangcuatoi']))
+    $_SESSION['giohangcuatoi'] = [];
+if (!isset($_SESSION['donhangcuatoi']))
+    $_SESSION['donhangcuatoi'] = [];
 
 
 $spnew = loadall_sanpham_home();

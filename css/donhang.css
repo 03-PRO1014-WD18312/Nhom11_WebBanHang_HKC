@@ -55,8 +55,8 @@
 .div-two{
     font-size: 25px;
 }
-.content .box-right>input{
-    width: 50%;
+.content>input{
+    width: 220px;
     padding: 20px;
     font-size: 20px;
     color:white;

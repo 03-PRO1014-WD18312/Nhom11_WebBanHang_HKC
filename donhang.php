@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="index.php?act=donhang" method="POST">
+    <form action="index.php?act=bill" method="POST">
         <div class="container">
             <div class="title">
                 <p>Thông tin giao hàng</p>

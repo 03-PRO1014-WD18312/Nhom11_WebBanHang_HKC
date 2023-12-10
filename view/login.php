@@ -11,4 +11,5 @@
     Chưa có tài khoản?
     <a href="?act=dangky">Đăng ký</a>
   </p>
+  <p class="signup-link"><a href="index.php?act=quenmk">Quên mật khẩu</a></p>
 </form>

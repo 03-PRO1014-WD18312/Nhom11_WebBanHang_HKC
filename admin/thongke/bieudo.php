@@ -23,14 +23,14 @@ function drawChart() {
     foreach($listthongke as $thongke){
       extract($thongke);
       if($i==$tongdm) $dauphay=""; else $dauphay="";
-      echo"['".$thongke['tendm']."',".$thongke['countsp']."],";
+      echo"['".$thongke['tensp']."',".$thongke['countct']."],";
       $i+=1;
     }
   ?>
 ]);
 
   // Optional; add a title and set the width and height of the chart
-  var options = {'title':'Thống kê sản phẩm theo danh mục', 'width':1100, 'height':800};
+  var options = {'title':'Thống kê sản phẩm theo số lần được đặt hàng', 'width':1100, 'height':800};
 
   // Display the chart inside the <div> element with id="piechart"
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));

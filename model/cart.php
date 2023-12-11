@@ -1,9 +1,9 @@
 <?php
    function loadall_thongke()
    {
-       $sql = "select danhmuc.id as madm, danhmuc.name as tendm, count(sanpham.id) as countsp, min(sanpham.price) as minprice, max(sanpham.price) as maxprice, avg(sanpham.price) as avgprice";
-       $sql .= " from sanpham left join danhmuc on danhmuc.id=sanpham.iddm";
-       $sql .= " group by danhmuc.id order by danhmuc.id desc";
+       $sql = "select sanpham.id as masp, sanpham.name as tensp, count(chitietdh.soluong) as countct, min(chitietdh.pricedh) as minpricedh, max(chitietdh.pricedh) as maxpricedh, avg(chitietdh.pricedh) as avgpricedh";
+       $sql .= " from chitietdh left join sanpham on sanpham.id=chitietdh.id_sp";
+       $sql .= " group by sanpham.id order by sanpham.id desc";
        $listtk = pdo_query($sql);
        return $listtk;
    }

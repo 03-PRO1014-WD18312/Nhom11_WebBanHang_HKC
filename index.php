@@ -269,9 +269,12 @@ if ($kiemtra == 0) {
                 }
                 $_SESSION['giohangcuatoi']=[];
             }
-            $listdonhang=loadone_donhang($id_dh);
-            $billct=loadall_ctdh($id_dh);
-            include "dathangthanhcong.php";
+            // $listdonhang=loadone_donhang($id_dh);
+            // $billct=loadall_ctdh($id_dh);
+            // echo "<script>";
+            //         echo "alert('Đặt hàng thành công')";
+            //         echo "</script>";
+            header('location:index.php?act=resethome');
 
             break;
             // case 'dathanhthanhcong':

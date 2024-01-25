@@ -18,7 +18,7 @@ if (isset($_GET['act']) && ($_GET['act'] != "")) {
         case "thoat":
             unset($_SESSION['is_login']);
             unset($_SESSION['admin']);
-            header("location: ../index.php");
+            header("location: ../index.php?act=resethome");
             break;
         case "dangnhapadmin":
             include "dangnhapadmin.php";

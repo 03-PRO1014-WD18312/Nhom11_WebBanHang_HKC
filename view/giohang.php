@@ -1,5 +1,6 @@
 <?php
     $html_cart=giohang();
+    $tongdh=get_tongdh();
 ?>
 
 <div class="containerfull">
@@ -17,7 +18,7 @@
                         <th>Đơn giá</th>
                         <th>Số lượng</th>
                         <th>Thành tiền</th>
-                        <th>Thao tác</th>
+
                     </tr>
                         <?=$html_cart;?>
                         <br>

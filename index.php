@@ -119,7 +119,7 @@ if ($kiemtra == 0) {
                     if (checkuser($user, $pass)) {
                         $_SESSION['is_login'] = true;
                         $_SESSION['username'] = $user;
-                        header('location:index.php');
+                        header('location:index.php?act=resethome');
                     } elseif (checkadmin($user, $pass)) {
                         $_SESSION['is_login'] = true;
                         $_SESSION['admin'] = $user;
@@ -206,7 +206,7 @@ if ($kiemtra == 0) {
                 if (isset($_GET['del']) && ($_GET['del'] == 1)) {
                     unset($_SESSION["giohangcuatoi"]);
                     // $_SESSION['giohangcuatoi']=[];
-                    header('location: index.php');
+                    header('location: index.php?act=resethome');
                 } else {
                     if (isset($_SESSION['giohangcuatoi'])) {
                         $tongdh = get_tongdh();
@@ -269,9 +269,12 @@ if ($kiemtra == 0) {
                 }
                 $_SESSION['giohangcuatoi']=[];
             }
-            $listdonhang=loadone_donhang($id_dh);
-            $billct=loadall_ctdh($id_dh);
-            include "dathangthanhcong.php";
+            // $listdonhang=loadone_donhang($id_dh);
+            // $billct=loadall_ctdh($id_dh);
+            // echo "<script>";
+            //         echo "alert('Đặt hàng thành công')";
+            //         echo "</script>";
+            header('location:index.php?act=resethome');
 
             break;
             // case 'dathanhthanhcong':

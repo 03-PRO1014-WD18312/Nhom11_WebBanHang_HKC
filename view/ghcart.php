@@ -14,7 +14,7 @@
             <td>'.$spadd[3].'.000đ</td>
             <td>'.$spadd[4].'</td>
             <td>'.$ttien.'.000đ</td>
-            <td><a href="#"><input type="button" value="Xóa"></td></a></td>
+            
         </tr>
         
             ';

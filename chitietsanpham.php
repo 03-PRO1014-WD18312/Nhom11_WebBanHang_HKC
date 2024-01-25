@@ -37,13 +37,13 @@
                 <input type="submit" name="themvaogiohang" value="Thêm vào giỏ hàng">
             </form>'; ?>
 
-            <?php echo '<form action="index.php?act=muangay" method="POST">
+            <!-- <?php echo '<form action="index.php?act=muangay" method="POST">
                 <input type="hidden" name="id" value="' . $id . '">
                 <input type="hidden" name="name" value="' . $name . '">
                 <input type="hidden" name="img" value="' . $img . '">
                 <input type="hidden" name="price" value="' . $price . '">
                 <input type="submit" name="muangay" value="Mua ngay">
-            </form>'; ?>
+            </form>'; ?> -->
 
         </div>
         <div class="img-size">
